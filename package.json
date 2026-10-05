@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/harendrachohan/ai-chat-application#readme",
   "dependencies": {
+    "cors": "^2.8.6",
     "dotenv": "^18.0.5",
     "express": "^5.2.1",
     "groq-sdk": "^1.6.0",

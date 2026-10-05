@@ -16,10 +16,9 @@ export async function generate( userMessage){
         },
     ];
 
-    const question = userMessage;
     messages.push({
         role:'user',
-        content: question
+        content: userMessage
     })
 
     while(true){
@@ -76,37 +75,6 @@ export async function generate( userMessage){
                 
             }
         }
-
-        const completion2 = await groq.chat.completions.create({
-            temperature:0,
-            model: "openai/gpt-oss-20b",
-            messages: messages,
-            tools:[
-                {
-                    type:"function",
-                    function:{
-                        name: "webSearch",
-                        description:"search the latest information and realtime data on the internet.",
-                        parameters: {
-                            type: 'object',
-                            properties:{
-                                query:{
-                                    type:'string',
-                                    description: "To search query to perform search on. "
-                                },
-                            },
-                            required: ['query']
-                        }
-
-
-
-                    }
-                }
-            ],
-            tool_choice:'auto',
-        })
-        
-        // console.log("Output", JSON.stringify(completion2.choices[0].message, null, 2))
 
     }
     
