@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Chat Application</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: #555 transparent;
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #555;
+            border-radius: 10px;
+        }
+
+        textarea {
+            resize: none;
+        }
+    </style>
+</head>
+
+<body class="bg-[#212121] text-white h-screen">
+
+    <!-- Main Chat Container -->
+    <div class="h-screen flex flex-col">
+
+        <!-- ================= CHAT MESSAGES ================= -->
+
+        <div class="flex-1 overflow-y-auto">
+
+            <div class="max-w-3xl mx-auto px-4 py-8" id="chat-container">
+
+                <!-- ================= USER MESSAGE ================= -->
+
+                <div class="flex justify-end mb-6">
+
+                    <div class="flex items-end gap-3 max-w-[85%] md:max-w-[70%]">
+
+                        <!-- User Message -->
+                        <div
+                            class="bg-[#2f2f2f]
+                                rounded-2xl rounded-br-md
+                                px-4 py-3
+                                text-[15px]
+                                leading-6
+                                text-white">
+
+                            Hello! Can you help me create a
+                            ChatGPT-style chat application?
+
+                        </div>
+
+                        <!-- User Avatar -->
+                        <div
+                            class="flex-shrink-0
+                                w-8 h-8
+                                rounded-full
+                                bg-gray-600
+                                flex items-center
+                                justify-center
+                                text-sm">
+
+                            U
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= BOT MESSAGE ================= -->
+
+                <div class="flex justify-start mb-6">
+
+                    <div class="flex items-start gap-3 max-w-[85%] md:max-w-[75%]">
+
+                        <!-- Bot Avatar -->
+                        <div
+                            class="flex-shrink-0
+                                w-8 h-8
+                                rounded-full
+                                bg-white
+                                text-black
+                                flex items-center
+                                justify-center">
+
+                            ✦
+
+                        </div>
+
+                        <!-- Bot Response -->
+                        <div
+                            class="text-[15px]
+                                leading-7
+                                text-gray-100
+                                pt-1">
+
+                            Absolutely! I can help you create
+                            a clean and responsive ChatGPT-style
+                            interface using Tailwind CSS.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= USER MESSAGE ================= -->
+
+                <div class="flex justify-end mb-6">
+
+                    <div class="flex items-end gap-3 max-w-[85%] md:max-w-[70%]">
+
+                        <div
+                            class="bg-[#2f2f2f]
+                                rounded-2xl rounded-br-md
+                                px-4 py-3
+                                text-[15px]
+                                leading-6">
+
+                            Make the chat responsive for mobile
+                            and desktop.
+
+                        </div>
+
+                        <div
+                            class="flex-shrink-0
+                                w-8 h-8
+                                rounded-full
+                                bg-gray-600
+                                flex items-center
+                                justify-center
+                                text-sm">
+
+                            U
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= BOT MESSAGE ================= -->
+
+                <div class="flex justify-start mb-6">
+
+                    <div class="flex items-start gap-3 max-w-[85%] md:max-w-[75%]">
+
+                        <div
+                            class="flex-shrink-0
+                                w-8 h-8
+                                rounded-full
+                                bg-white
+                                text-black
+                                flex items-center
+                                justify-center">
+
+                            ✦
+
+                        </div>
+
+                        <div
+                            class="text-[15px]
+                                leading-7
+                                text-gray-100
+                                pt-1">
+
+                            Sure. The chat area is responsive,
+                            scrollable and the input box stays
+                            at the bottom of the screen.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= INPUT AREA ================= -->
+
+        <div class="w-full px-3 md:px-4 pb-4">
+
+            <div class="max-w-3xl mx-auto">
+
+                <!-- Chat Input Box -->
+
+                <div
+                    class="relative bg-[#2f2f2f]
+                           border border-[#555]
+                           rounded-2xl shadow-lg">
+
+                    <!-- Textarea -->
+
+                    <textarea
+                        rows="1"
+                        placeholder="Message ChatGPT..."
+                        class="w-full bg-transparent
+                               outline-none
+                               text-white
+                               placeholder-gray-500
+                               px-4 pt-4 pb-12
+                               text-[15px]"
+                        id="user-input"
+                    >
+                    </textarea>
+
+
+                    <!-- Bottom Controls -->
+
+                    <div
+                        class="absolute bottom-2
+                               left-3 right-3
+                               flex items-center
+                               justify-between">
+
+                        <!-- Left Buttons -->
+
+                        <div class="flex items-center gap-1">
+
+                            <button
+                               
+                                class="p-2 rounded-lg
+                                       hover:bg-[#444]
+                                       transition">
+
+                                <i
+                                    data-lucide="plus"
+                                    class="w-5 h-5 text-gray-400">
+                                </i>
+
+                            </button>
+
+                        </div>
+
+
+                        <!-- Send Button -->
+
+                        <button
+                            id="search"
+                            class="w-8 h-8 rounded-full
+                                   bg-white text-black
+                                   flex items-center
+                                   justify-center
+                                   hover:bg-gray-200
+                                   transition">
+
+                            <i
+                                data-lucide="arrow-up"
+                                class="w-5 h-5">
+                            </i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Footer Text -->
+
+                <p
+                    class="text-center text-[11px]
+                           text-gray-500 mt-2">
+
+                    ChatGPT can make mistakes.
+                    Check important info.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+    
+    <script src="./script.js" ></script>
+
+</body>
+
+</html>
